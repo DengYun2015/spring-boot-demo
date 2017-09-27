@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="main :: htmlhead" th:with="title='Hello'"></head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul th:include="main::menu"></ul>
+        </div>
+        <div class="col-md-8">
+            <h1>index</h1>
+        </div>
+    </div>
+</div>
+<hide th:include="main :: js"></hide>
+</body>
+</html>

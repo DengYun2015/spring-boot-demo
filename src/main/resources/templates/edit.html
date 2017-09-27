@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="main :: htmlhead" th:with="title='编辑'"></head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul th:include="main::menu"></ul>
+        </div>
+        <div class="col-md-8">
+            <form method="post" action="edit" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" th:if="${id > 0 }" th:value="${id}" name="id"></input>
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" class="form-control"  name="title" id="title" placeholder="title"></input>
+                </div>
+                <div class="form-group">
+                    <label for="content">内容</label>
+                    <div>
+                        <textarea id="content" name="content" style="width: 100%;height: 400px;resize: none"></textarea>
+                    </div>
+                </div>
+<!--                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="public" value="1"> 公开</input>
+                    </label>
+                </div>-->
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hide th:include="main :: js"></hide>
+</body>
+</html>

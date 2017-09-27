@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="main :: htmlhead" th:with="title='编辑'"></head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul th:include="main::menu"></ul>
+        </div>
+        <div class="col-md-8">
+            <div th:if="${error == true}">
+                <h1 th:text="${errorMsg}"></h1>
+            </div>
+            <div th:if="${error == false}">
+                <div>
+                    <h1 th:text="${title}"></h1>
+                </div>
+                <div>
+                    <pre th:text="${content}"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hide th:include="main :: js"></hide>
+</body>
+</html>
